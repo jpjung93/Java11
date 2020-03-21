@@ -9,9 +9,9 @@ public class StringPalindrome {
     System.out.println("\"" + a + "\" is a palindrome: " + checkStrPalindrome(a));
 
   }
-
+  // Check each character at the start and end to see if they match
   public static boolean checkStrPalindrome(String check){
-    // Check each character at the start and end to see if they match
+    // Convert to single case
     char[] charCheck = check.toUpperCase().toCharArray();
 
     int end = charCheck.length-1;
