@@ -1,6 +1,9 @@
 package com.review;
 /*
   Simple Fibonacci program
+
+  Loop works better-ish
+  Tried recursion, but not too great, need to print first number
  */
 
 
@@ -13,6 +16,16 @@ public class Fib {
     fibLoop(10);
     fibLoop(-15);
     fibLoop(15);
+
+    System.out.println("\nRecursively... \n");
+
+    fibRec(1);
+    fibRec(2);
+    fibRec(3);
+    fibRec(4);
+    fibRec(10);
+    fibRec(-15);
+    fibRec(15);
 
   }
 
@@ -55,5 +68,27 @@ public class Fib {
 
     // print new line upon completion
     System.out.println();
+  }
+
+  public static void fibRec(int count){
+    if(count < 0){
+      System.out.println("Please enter a number greater than 0");
+      return;
+    }
+
+    fibRecHelp(count, 0, 1);
+    System.out.println();
+  }
+
+  public static void fibRecHelp(int count, int prev2, int prev1){
+    if(count == 0){
+      return;
+    }
+
+    int current = prev2 + prev1;
+    System.out.print(current + " ");
+
+     fibRecHelp(--count, prev1, current);
+
   }
 }
