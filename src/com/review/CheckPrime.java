@@ -13,17 +13,24 @@ public class CheckPrime {
     System.out.println();
 
     for(int i = 1; i <= 20; i++){
-      System.out.println("Is " + i + " prime?: " + checkPrime(i));
+      //System.out.println("Is " + i + " prime?: " + checkPrime(i));
+      if(checkPrime(i)){
+        System.out.println(i);
+      }
     }
 
   }
 
   public static boolean checkPrime(int num){
+    if(num == 1 || num == 2){
+      return false;
+    }
+
     // check up to square root because the complement would have already been found
     int root = (int) Math.sqrt(num);
 
     // check all numbers starting at 2
-    for(int test = 2; test < root; test++){
+    for(int test = 2; test <= root; test++){
       // return true if modulo is 0
 
       int mod = num % test;
