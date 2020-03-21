@@ -12,17 +12,20 @@ public class CheckPrime {
     System.out.println(checkPrime(13));
     System.out.println();
 
-    for(int i = 1; i <= 20; i++){
+    for(int i = 1; i <= 50; i++){
       //System.out.println("Is " + i + " prime?: " + checkPrime(i));
       if(checkPrime(i)){
         System.out.println(i);
       }
     }
 
+    System.out.println((-10) + " is a prime number: " + checkPrime(-10));
+
   }
 
   public static boolean checkPrime(int num){
-    if(num == 1 || num == 2){
+    // 0, 1, 2, and negative numbers are not prime by definition
+    if(num <= 2){
       return false;
     }
 
